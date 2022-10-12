@@ -1,2 +1,2 @@
-ActiveMQTemplate
+Deliciozo - MOM
 ================
