@@ -4,6 +4,7 @@ import javax.jms.*;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+
 public class MyReceiver implements Runnable {
 
 	@Override
@@ -19,10 +20,14 @@ public class MyReceiver implements Runnable {
                 @Override
                 public void onMessage(Message message) {
                     try    {
-                        if (message instanceof TextMessage) {
-                            TextMessage textMessage = (TextMessage) message;
-                            String text = textMessage.getText();
-                            System.out.println("Received: " + text);
+                        if (message instanceof Object) {
+
+                            ObjectMessage obj = (ObjectMessage) message;
+                            int[] objReceived = (int[]) obj.getObject();
+                            for (int i=0; i<objReceived.length; i++){
+                                System.out.println(objReceived[i]);
+                            }
+
                         } else {
                             System.out.println("Received: " + message);
                         }

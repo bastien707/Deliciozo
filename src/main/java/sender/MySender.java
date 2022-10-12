@@ -4,6 +4,8 @@ import javax.jms.*;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+import java.lang.reflect.Array;
+
 
 public class MySender implements Runnable{
 	@Override
@@ -16,9 +18,9 @@ public class MySender implements Runnable{
             Destination destination = session.createQueue("DQueue");
             MessageProducer producer = session.createProducer(destination);
             producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
-            String text = "Hello world from: ";
-            TextMessage message = session.createTextMessage(text);
-            producer.send(message);
+            int[] arr = {1,3};
+            ObjectMessage obj= session.createObjectMessage(arr);
+            producer.send(obj);
             session.close();
             connection.close();
 
