@@ -1,15 +1,18 @@
 package Main;
 
-public class Pizzeria {
-    static Customer[] customerList;
-    static Cooker[] cookerList;
-    static Order[] orderList;
-    static DeliveryMan[] deliveryManList;
-    static Assistant[] assistantList;
-    static Pizza[] pizzaList;
-    static Product[] productList;
+import java.util.ArrayList;
 
-    public Pizzeria(Customer[] customerList, Cooker[] cookerList, Order[] orderList, DeliveryMan[] deliveryManList, Assistant[] assistantList, Pizza[] pizzaList, Product[] productList) {
+public class Pizzeria {
+    static ArrayList<Customer> customerList = new ArrayList<Customer>();
+    static ArrayList<Cooker> cookerList = new ArrayList<Cooker>();
+    static ArrayList<Order> orderList = new ArrayList<Order>();
+    static ArrayList<DeliveryMan> deliveryManList = new ArrayList<DeliveryMan>();
+    static ArrayList<Assistant>assistantList = new ArrayList<Assistant>();
+    static ArrayList<String> pizzaList = new ArrayList<String>();
+    static ArrayList<String> pizzaSizeList = new ArrayList<String>();
+    static ArrayList<String> productList = new ArrayList<String>();
+
+    public Pizzeria(ArrayList<Customer> customerList, ArrayList<Cooker> cookerList, ArrayList<Order> orderList, ArrayList<DeliveryMan> deliveryManList, ArrayList<Assistant>assistantList, ArrayList<String> pizzaList, ArrayList<String> productList){
         Pizzeria.customerList = customerList;
         Pizzeria.cookerList = cookerList;
         Pizzeria.orderList = orderList;
@@ -19,60 +22,77 @@ public class Pizzeria {
         Pizzeria.productList = productList;
     }
 
-    public static Customer[] getCustomerList() {
+    public static ArrayList<Customer> getCustomerList() {
         return customerList;
     }
 
-    public static Cooker[] getCookerList() {
-        return cookerList;
-    }
-
-    public static Order[] getOrderList() {
-        return orderList;
-    }
-
-    public static DeliveryMan[] getDeliveryManList() {
-        return deliveryManList;
-    }
-
-    public static Assistant[] getAssistantList() {
-        return assistantList;
-    }
-
-    public static Pizza[] getPizzaList() {
-        return pizzaList;
-    }
-
-    public static Product[] getProductList() {
-        return productList;
-    }
-
-    public static void setCustomerList(Customer[] customerList) {
+    public static void setCustomerList(ArrayList<Customer> customerList) {
         Pizzeria.customerList = customerList;
     }
 
-    public static void setCookerList(Cooker[] cookerList) {
+    public static ArrayList<Cooker> getCookerList() {
+        return cookerList;
+    }
+
+    public static void setCookerList(ArrayList<Cooker> cookerList) {
         Pizzeria.cookerList = cookerList;
     }
 
-    public static void setOrderList(Order[] orderList) {
+    public static ArrayList<Order> getOrderList() {
+        return orderList;
+    }
+
+    public static void setOrderList(ArrayList<Order> orderList) {
         Pizzeria.orderList = orderList;
     }
 
-    public static void setDeliveryManList(DeliveryMan[] deliveryManList) {
+    public static ArrayList<DeliveryMan> getDeliveryManList() {
+        return deliveryManList;
+    }
+
+    public static void setDeliveryManList(ArrayList<DeliveryMan> deliveryManList) {
         Pizzeria.deliveryManList = deliveryManList;
     }
 
-    public static void setAssistantList(Assistant[] assistantList) {
+    public static ArrayList<Assistant> getAssistantList() {
+        return assistantList;
+    }
+
+    public static void setAssistantList(ArrayList<Assistant> assistantList) {
         Pizzeria.assistantList = assistantList;
     }
 
-    public static void setPizzaList(Pizza[] pizzaList) {
+    public static void setPizzaList(ArrayList<String> pizzaList) {
         Pizzeria.pizzaList = pizzaList;
     }
 
-    public static void setProductList(Product[] productList) {
+    public static void setPizzaSizeList(ArrayList<String> pizzaSizeList) {
+        Pizzeria.pizzaSizeList = pizzaSizeList;
+    }
+
+    public static void setProductList(ArrayList<String> productList) {
         Pizzeria.productList = productList;
+    }
+
+    public static ArrayList<String> getProductList() {
+        for (ProductType p: ProductType.values()){
+            productList.add(p.name());
+        }
+        return productList;
+    }
+
+    public static ArrayList<String> getPizzaList() {
+        for (PizzaType p: PizzaType.values()){
+            pizzaList.add(p.name());
+        }
+        return pizzaList;
+    }
+
+    public static ArrayList<String> getPizzaSizeList() {
+        for (PizzaSize p: PizzaSize.values()){
+            pizzaSizeList.add(p.name());
+        }
+        return pizzaSizeList;
     }
 
     @Override
@@ -89,11 +109,6 @@ public class Pizzeria {
     }
 
     public static void addOrder(Order newOrder) {
-        Order[] newOrderList = new Order[orderList.length + 1];
-        for (int i = 0; i < orderList.length; i++) {
-            newOrderList[i] = orderList[i];
-        }
-        newOrderList[newOrderList.length - 1] = newOrder;
-        orderList = newOrderList;
+        orderList.add(newOrder);
     }
 }

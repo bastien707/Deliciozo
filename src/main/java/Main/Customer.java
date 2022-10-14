@@ -1,6 +1,9 @@
 package Main;
 
+import sender.CustomerSender;
+
 import java.util.Date;
+
 
 public class Customer {
     private String surname;
@@ -66,5 +69,15 @@ public class Customer {
                 ", phone='" + phone + '\'' +
                 ", dateFirstOrder=" + dateFirstOrder +
                 '}';
+    }
+
+    private static Thread thread(Runnable runnable, boolean daemon) {
+        Thread thread = new Thread(runnable);
+        thread.setDaemon(daemon);
+        thread.start();
+        return thread;
+    }
+    public void sendDemand(){
+        thread(new CustomerSender(1), false);
     }
 }
