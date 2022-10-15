@@ -9,6 +9,7 @@ public class Order {
     private Pizza[] pizzaOrder;
     private Product[] productOrder;
     private String phoneCustomer;
+    private double bill;
 
     public Order(int numOrder, Date date, String status, Pizza[] pizzaOrder, Product[] productOrder, String phoneCustomer) {
         this.numOrder = numOrder;
@@ -17,6 +18,7 @@ public class Order {
         this.pizzaOrder = pizzaOrder;
         this.productOrder = productOrder;
         this.phoneCustomer = phoneCustomer;
+        this.bill = calculBill(pizzaOrder, productOrder);
     }
 
     public int getNumOrder() {
@@ -43,6 +45,10 @@ public class Order {
         return phoneCustomer;
     }
 
+    public double getBill() {
+        return bill;
+    }
+
     public void setNumOrder(int numOrder) {
         this.numOrder = numOrder;
     }
@@ -67,6 +73,10 @@ public class Order {
         this.phoneCustomer = phoneCustomer;
     }
 
+    public void setBill(double bill) {
+        this.bill = bill;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -79,13 +89,15 @@ public class Order {
                 '}';
     }
 
-    public void endOrder(Order order) {
-        System.out.println("Order finished");
-        order.setStatus("Finished");
-    }
-
-    public void cancelOrder(Order order) {
-        System.out.println("Order canceled");
-        order.setStatus("Canceled");
+    //method to calcul the bill by adding the price of the pizzas and the products
+    public double calculBill(Pizza[] pizzaOrder, Product[] productOrder) {
+        double bill = 0;
+        for (int i = 0; i < pizzaOrder.length; i++) {
+            bill += pizzaOrder[i].getPrice();
+        }
+        for (int i = 0; i < productOrder.length; i++) {
+            bill += productOrder[i].getPrice();
+        }
+        return bill;
     }
 }

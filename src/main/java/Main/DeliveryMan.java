@@ -4,13 +4,13 @@ public class DeliveryMan {
     private int numDelivery;
     private double bill;
     private double waller;
-    private Order listOrder;
+    private Order Order;
 
-    public DeliveryMan(int numDelivery, double bill, double waller, Order listOrder) {
+    public DeliveryMan(int numDelivery, double bill, double waller, Order Order) {
         this.numDelivery = numDelivery;
         this.bill = bill;
         this.waller = waller;
-        this.listOrder = listOrder;
+        this.Order = Order;
     }
 
     public int getNumDelivery() {
@@ -25,8 +25,8 @@ public class DeliveryMan {
         return waller;
     }
 
-    public Order getListOrder() {
-        return listOrder;
+    public Order getOrder() {
+        return Order;
     }
 
     public void setNumDelivery(int numDelivery) {
@@ -41,8 +41,8 @@ public class DeliveryMan {
         this.waller = waller;
     }
 
-    public void setListOrder(Order listOrder) {
-        this.listOrder = listOrder;
+    public void setListOrder(Order Order) {
+        this.Order = Order;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class DeliveryMan {
                 "numDelivery=" + numDelivery +
                 ", bill=" + bill +
                 ", waller=" + waller +
-                ", listOrder=" + listOrder +
+                ", listOrder=" + Order +
                 '}';
     }
 

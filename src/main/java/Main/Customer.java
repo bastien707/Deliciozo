@@ -67,4 +67,8 @@ public class Customer {
                 ", dateFirstOrder=" + dateFirstOrder +
                 '}';
     }
+
+    public void order() {
+        System.out.println("Ordering...");
+    }
 }

@@ -43,6 +43,18 @@ public class Assistant {
         System.out.println("Taking order finished");
     }
 
+    public void endOrder(Order order) {
+        order.setStatus("Finished");
+        System.out.println("Order: " + order.getNumOrder() + " is finished");
+        // we give half the money to the DeliveryMan
+        System.out.println("The DeliveryMan has been paid " + order.getBill()/2 + " euros");
+    }
+
+    public void cancelOrder(Order order) {
+        System.out.println("Order canceled");
+        order.setStatus("Canceled");
+    }
+
     //give order to deliveryMan
     public void giveOrder(DeliveryMan deliveryMan, Order order) {
         deliveryMan.setListOrder(order);
