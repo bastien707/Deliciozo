@@ -1,6 +1,8 @@
 package Main;
 
-public class Pizza {
+import java.io.Serializable;
+
+public class Pizza implements Serializable {
     private String name;
     private PizzaType type;
     private PizzaSize size;

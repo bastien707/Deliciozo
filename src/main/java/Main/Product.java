@@ -1,6 +1,8 @@
 package Main;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private ProductType type;
     private double price;
     private int quantity;

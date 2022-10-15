@@ -1,16 +1,21 @@
 package Main;
 
+import receiver.AssistantReceiver;
+import receiver.DeliverReceiver;
+
 public class DeliveryMan {
     private int numDelivery;
     private double bill;
     private double waller;
     private Order listOrder;
 
-    public DeliveryMan(int numDelivery, double bill, double waller, Order listOrder) {
-        this.numDelivery = numDelivery;
+    private static int nextDeliverId=1;
+
+    public DeliveryMan(double bill, double waller) {
+        this.numDelivery = nextDeliverId;
         this.bill = bill;
         this.waller = waller;
-        this.listOrder = listOrder;
+        nextDeliverId++;
     }
 
     public int getNumDelivery() {
@@ -63,5 +68,17 @@ public class DeliveryMan {
     public void endDeliver(Order order) {
         System.out.println("Delivering finished");
         order.setStatus("Delivered");
+    }
+
+    private static Thread thread(Runnable runnable, boolean daemon) {
+        Thread thread = new Thread(runnable);
+        thread.setDaemon(daemon);
+        thread.start();
+        return thread;
+    }
+
+    public void listenCookerDemand(){
+        System.out.println("create thread deliver "+numDelivery);
+        thread(new DeliverReceiver(numDelivery), false);
     }
 }

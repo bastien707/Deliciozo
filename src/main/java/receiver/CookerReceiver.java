@@ -1,30 +1,28 @@
 package receiver;
 
-import javax.jms.*;
-
-import Main.Customer;
 import Main.OrderAndCustomer;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+import javax.jms.*;
 
-public class AssistantReceiver implements Runnable {
-    private int idAssistant;
+public class CookerReceiver implements Runnable {
+    private int cookerId;
 
-    public AssistantReceiver(int idAssistant) {
-        this.idAssistant = idAssistant;
+    public CookerReceiver(int cookerId) {
+        this.cookerId = cookerId;
     }
 
-    public void sendToCooker(OrderAndCustomer o){
+    public void sendToDeliver(OrderAndCustomer o){
         try{
             ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
             javax.jms.Connection connection = connectionFactory.createConnection();
             connection.start();
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            Destination destination = session.createQueue("CommandeCree");
+            Destination destination = session.createQueue("CommandePrete");
             MessageProducer producer = session.createProducer(destination);
             producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);
             ObjectMessage obj= session.createObjectMessage(o);
-            System.out.println("Envoi de la commande de Monsieur " +o.getCustomer().getSurname()+" au cuisinier");
+            System.out.println("Envoi de la commande de Monsieur " +o.getCustomer().getSurname()+" aux livreurs");
             producer.send(obj);
             session.close();
             connection.close();
@@ -34,14 +32,13 @@ public class AssistantReceiver implements Runnable {
         }
     }
 
-
     @Override
     public void run() {
         try{
             ConnectionFactory connectionFactory = new ActiveMQConnectionFactory("tcp://localhost:61616");
             Connection connection = connectionFactory.createConnection();
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-            Destination destination = session.createQueue("DemandeDePriseEnCharge");
+            Destination destination = session.createQueue("CommandeCree");
             MessageConsumer consumer = session.createConsumer(destination);
             connection.start();
             consumer.setMessageListener(new MessageListener() {
@@ -52,10 +49,9 @@ public class AssistantReceiver implements Runnable {
 
                             ObjectMessage obj = (ObjectMessage) message;
                             OrderAndCustomer objReceived = (OrderAndCustomer) obj.getObject();
-                            System.out.println("Demande de prise en charge du client "+objReceived.getCustomer().getId()
-                                    +" recue par assistant" + idAssistant);
-                            objReceived.setAssistantInCharge(idAssistant);
-                            sendToCooker(objReceived);
+                            System.out.println("Commande de monsieur "+objReceived.getCustomer().getSurname()
+                                    +" recue par le cuisinier "+cookerId);
+                            sendToDeliver(objReceived);
 
                         } else {
                             System.out.println("Received: " + message);

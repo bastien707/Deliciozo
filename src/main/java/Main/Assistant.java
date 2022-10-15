@@ -9,9 +9,9 @@ public class Assistant {
     private int numAssistant;
     private ArrayList<Order> listOrder = new ArrayList<Order>();
 
-    public Assistant(int numAssistant, ArrayList<Order> listOrder) {
+    public Assistant(int numAssistant) {
         this.numAssistant = numAssistant;
-        this.listOrder = listOrder;
+        this.listOrder = new ArrayList<Order>();
     }
 
     public int getNumAssistant() {
@@ -109,7 +109,7 @@ public class Assistant {
     }
 
     //ask for what he wants and then create an order
-    public void createOrder(Scanner scanner,int i, Customer customer) {
+    public Order createOrder(Scanner scanner,int i, Customer customer) {
         i = i+1;
         System.out.println("How many pizza do you want?");
         String Nbpizza = scanner.nextLine();
@@ -170,6 +170,7 @@ public class Assistant {
         Pizzeria.addOrder(newOrder);
         //add the order to the list of order of the assistant
         this.addOrder(newOrder);
+        return newOrder;
     }
 
     private void addOrder(Order newOrder) {
@@ -183,7 +184,8 @@ public class Assistant {
         return thread;
     }
 
-    public void listenCustomerDemand(){
-        thread(new AssistantReceiver(), false);
+    public void listenCustomerDemand(int idAssistant){
+        System.out.println("create thread assistant"+idAssistant);
+        thread(new AssistantReceiver(idAssistant), false);
     }
 }

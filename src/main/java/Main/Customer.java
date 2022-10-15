@@ -2,15 +2,19 @@ package Main;
 
 import sender.CustomerSender;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
-public class Customer {
+public class Customer implements Serializable {
+    private int id;
     private String surname;
     private String firstname;
     private String address;
     private String phone;
     private Date dateFirstOrder;
+
+    private static int nextCustomerId=1;
 
     public Customer(String surname, String firstname, String address, String phone, Date dateFirstOrder) {
         this.surname = surname;
@@ -18,6 +22,12 @@ public class Customer {
         this.address = address;
         this.phone = phone;
         this.dateFirstOrder = dateFirstOrder;
+        this.id = nextCustomerId;
+        nextCustomerId++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getSurname() {
@@ -77,7 +87,7 @@ public class Customer {
         thread.start();
         return thread;
     }
-    public void sendDemand(){
-        thread(new CustomerSender(1), false);
+    public void sendDemand(OrderAndCustomer demand){
+        thread(new CustomerSender(demand), false);
     }
 }
