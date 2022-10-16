@@ -73,14 +73,20 @@ public class Assistant {
     }
 
     //Ask if it's his first time ordering and recup the answer with scanner
-    public void askFirstTime() {
+    public Customer askFirstTime() {
         System.out.println("Is it your first time ordering? (y/n)");
         try (Scanner scanner = new Scanner(System.in)) {
             String answer = scanner.nextLine();
             if (answer.equals("y")) {
                 System.out.println("Welcome to our restaurant!");
+                Customer customer = createCustomer();
+                System.out.println("Your account has been created");
+                Pizzeria.addCustomer(customer);
+                return customer;
             } else {
                 System.out.println("Welcome back!");
+                Customer customer = findCustomer();
+                return customer;
             }
         }
     }

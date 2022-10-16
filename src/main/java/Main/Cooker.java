@@ -1,23 +1,35 @@
 package Main;
 
 public class Cooker {
-    private Order listOrder;
+    private int numCooker;
+    private Order[] listOrder;
 
-    public Cooker(Order listOrder) {
+    public Cooker( int numCooker ,Order[] listOrder) {
+        this.numCooker = numCooker;
         this.listOrder = listOrder;
     }
 
-    public Order getListOrder() {
+    public int getNumCooker() {
+        return numCooker;
+    }
+
+    public Order[] getListOrder() {
         return listOrder;
     }
 
-    public void setListOrder(Order listOrder) {
+    public void setNumCooker(int numCooker) {
+        this.numCooker = numCooker;
+    }
+
+    public void setListOrder(Order[] listOrder) {
         this.listOrder = listOrder;
     }
+
 
     @Override
     public String toString() {
         return "Cooker{" +
+                ", numCooker=" + numCooker +
                 "listOrder=" + listOrder +
                 '}';
     }

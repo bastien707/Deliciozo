@@ -96,4 +96,59 @@ public class Pizzeria {
         newOrderList[newOrderList.length - 1] = newOrder;
         orderList = newOrderList;
     }
+
+    public static void addCustomer(Customer newCustomer) {
+        Customer[] newCustomerList = new Customer[customerList.length + 1];
+        for (int i = 0; i < customerList.length; i++) {
+            newCustomerList[i] = customerList[i];
+        }
+        newCustomerList[newCustomerList.length - 1] = newCustomer;
+        customerList = newCustomerList;
+    }
+
+    public static void addCooker(Cooker newCooker) {
+        Cooker[] newCookerList = new Cooker[cookerList.length + 1];
+        for (int i = 0; i < cookerList.length; i++) {
+            newCookerList[i] = cookerList[i];
+        }
+        newCookerList[newCookerList.length - 1] = newCooker;
+        cookerList = newCookerList;
+    }
+
+    public static void addDeliveryMan(DeliveryMan newDelivery) {
+        DeliveryMan[] newDeliveryManList = new DeliveryMan[deliveryManList.length + 1];
+        for (int i = 0; i < deliveryManList.length; i++) {
+            newDeliveryManList[i] = deliveryManList[i];
+        }
+        newDeliveryManList[newDeliveryManList.length - 1] = newDelivery;
+        deliveryManList = newDeliveryManList;
+    }
+
+    public static void addAssistant(Assistant newAssistant) {
+        Assistant[] newAssistantList = new Assistant[assistantList.length + 1];
+        for (int i = 0; i < assistantList.length; i++) {
+            newAssistantList[i] = assistantList[i];
+        }
+        newAssistantList[newAssistantList.length - 1] = newAssistant;
+        assistantList = newAssistantList;
+    }
+
+    public static void addPizza(Pizza newPizza) {
+        Pizza[] newPizzaList = new Pizza[pizzaList.length + 1];
+        for (int i = 0; i < pizzaList.length; i++) {
+            newPizzaList[i] = pizzaList[i];
+        }
+        newPizzaList[newPizzaList.length - 1] = newPizza;
+        pizzaList = newPizzaList;
+    }
+
+    public static void addProduct(Product newProduct) {
+        Product[] newProductList = new Product[productList.length + 1];
+        for (int i = 0; i < productList.length; i++) {
+            newProductList[i] = productList[i];
+        }
+        newProductList[newProductList.length - 1] = newProduct;
+        productList = newProductList;
+    }
+
 }
