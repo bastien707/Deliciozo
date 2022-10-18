@@ -3,6 +3,8 @@ package Scenario3;
 import Scenario3.messageBrokers.AssistantReceiver;
 import Scenario3.messageBrokers.DeliverReceiver;
 
+import static Scenario3.Main.thread;
+
 public class Deliver {
     private int idDeliver;
     private static int nextIdDeliver=1;
@@ -10,13 +12,6 @@ public class Deliver {
     public Deliver() {
         this.idDeliver = nextIdDeliver;
         nextIdDeliver++;
-    }
-
-    public static Thread thread(Runnable runnable, boolean daemon) {
-        Thread thread = new Thread(runnable);
-        thread.setDaemon(daemon);
-        thread.start();
-        return thread;
     }
 
     public void listenCookerDemand(){

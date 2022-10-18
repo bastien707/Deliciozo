@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SpringBootApplication
 public class Main {
-    private static Thread thread(Runnable runnable, boolean daemon) {
+    public static Thread thread(Runnable runnable, boolean daemon) {
         Thread thread = new Thread(runnable);
         thread.setDaemon(daemon);
         thread.start();

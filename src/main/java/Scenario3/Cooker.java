@@ -5,6 +5,8 @@ import Scenario3.messageBrokers.CookerSender;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import static Scenario3.Main.thread;
+
 public class Cooker implements Serializable {
     private int idCooker;
     private ArrayList<Customer> customers = new ArrayList<Customer>();
@@ -33,13 +35,6 @@ public class Cooker implements Serializable {
     public void preparePizza(){
         PizzaPreparation p = new PizzaPreparation(customers, idCooker);
         p.preparePizza();
-    }
-
-    public static Thread thread(Runnable runnable, boolean daemon) {
-        Thread thread = new Thread(runnable);
-        thread.setDaemon(daemon);
-        thread.start();
-        return thread;
     }
 
     public static void sendToDeliver(Customer c){

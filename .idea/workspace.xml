@@ -4,52 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20b5d0ad-b3d5-4fce-a7da-1580db2079f9" name="Changes" comment="First version of scenario 2">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Assistant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Asynchronous.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Cooker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Deliver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Pizza.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/PizzaPreparation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/messageBrokers/AssistantReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/messageBrokers/CookerReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/messageBrokers/CookerSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/messageBrokers/CustomerSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/messageBrokers/DeliverReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/messageBrokers/Receiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Scenario3/messageBrokers/Sender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.6.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="20b5d0ad-b3d5-4fce-a7da-1580db2079f9" name="Changes" comment="First version of scenario 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/receiver/MyReceiver$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/receiver/MyReceiver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/sender/MySender.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Assistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/Assistant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Cooker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/Cooker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/DeliveryMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/DeliveryMan.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/DemoApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/OrderAndCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/OrderAndCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Pizza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/Pizza.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/PizzaSize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/PizzaSize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/PizzaType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/PizzaType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Pizzeria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/Pizzeria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/ProductType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/Main/ProductType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/receiver/AssistantReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/receiver/AssistantReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/receiver/CookerReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/receiver/CookerReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/receiver/DeliverReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/receiver/DeliverReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/receiver/MyReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/receiver/MyReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sender/CustomerSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/sender/CustomerSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sender/MySender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario2/sender/MySender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenario3/Assistant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Assistant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenario3/Asynchronous.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenario3/Cooker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Cooker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenario3/Deliver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Deliver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenario3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Scenario3/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenario3/messageBrokers/Receiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Scenario3/messageBrokers/Sender.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +148,9 @@
       <workItem from="1666002119677" duration="771000" />
       <workItem from="1666006721379" duration="2064000" />
       <workItem from="1666010719059" duration="6120000" />
-      <workItem from="1666022272577" duration="1125000" />
+      <workItem from="1666022272577" duration="1481000" />
+      <workItem from="1666030203421" duration="735000" />
+      <workItem from="1666093605091" duration="222000" />
     </task>
     <task id="LOCAL-00001" summary="First version of scenario 2">
       <created>1665874438575</created>
@@ -194,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665874438575</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="First version of scenario 3">
+      <created>1666023547197</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666023547198</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,7 +185,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First version of scenario 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="First version of scenario 2" />
+    <MESSAGE value="First version of scenario 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="First version of scenario 3" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
